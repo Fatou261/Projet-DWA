@@ -51,7 +51,7 @@ class HomeController extends Controller
         $demande = Demande::find($id);
         $demande->statut = 3;
         $demande->save();
-        // Mail::to($demande->user)->send(new ValidateMail($demande));
+         Mail::to($demande->user)->send(new ValidateMail($demande));
     }
 
     public function rejet($id)
@@ -69,7 +69,7 @@ class HomeController extends Controller
         $demande = Demande::find($request->id);
         $demande->statut = 0;
         $demande->save();
-        // Mail::to($demande->user)->send( new RejetMail($demande,$request->motif));
+         Mail::to($demande->user)->send( new RejetMail($demande,$request->motif));
         return redirect('home_admin'); 
 
     }
