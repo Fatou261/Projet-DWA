@@ -34,7 +34,7 @@ class RejetMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Votre reclamation a ete rejetter',
+            //subject: 'Votre reclamation a ete rejetter',
         );
     }
 
